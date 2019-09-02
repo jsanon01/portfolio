@@ -90,7 +90,9 @@ nav ul li a:hover {
   height: 180px;
   /*border-bottom: 2px solid lightblue;*/
 }
-.project-pics{
+.project-pics {
+  width: 200px;
+  height: 180px;
   border-radius: 50%;
 }
 .project-title {
