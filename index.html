@@ -1,64 +1,295 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+<!--
+	Miniport by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
-<head>
-	<title>JeanBaptiste Sanon Portfolio</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-  <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Sacramento" rel="stylesheet">
-  <link rel="icon" href="mypic1.jpg" type="image/gif" sizes="16x16">
+	<head>
+		<title>JeanBaptiste Sanon</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="icon" href="images/mypic1.jpg" sizes="16x16" type="images/png"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script>
+        $(function(){
+          $("#feedback_form").submit(function(e){
+           e.preventDefault();
+           $form = $(this);
+           $.ajax({
+              type: "POST",
+              url: "https://umbdq84awb.execute-api.us-east-1.amazonaws.com/Testing/feedback",
+              data: $form.serialize(),
+              success: function(data) {
+              var container = $("#contact").find("div.container medium");
+              container.empty();
+              container.append("<h2>" + data + "</h2>");
+              //alert(data);
+          },
+          dataType: 'json'
+           })
+          });
+        });
+		</script>
+	</head>
+	<body class="is-preload">
 
-</head>
-<body>
-	<nav>
-		<ul id="navbar">
-		<li><a href="#welcome-section"About></a></li>
-			<li><a href="#projects"Work></a></li>
-			<li><a href="#contact"Contact></a></li>
-		</ul>
-	</nav>
-	<div id="welcome-section" class="intro">
-	 <img class="project-pics" src="mypic1.jpg" alt="project">
-  <h1>I'm JeanBaptiste Sanon</h1><br>
-	<p>Cloud Engineer & Front-End Web Developer</p>
-	</div>
-	<div id="projects" class="work-header">
-	<h2>These are some of my websites:</h2>
-		<a href="https://jsanon01.github.io/mycv/" target="_blank" class="project project-tile">
-    <img class="project-pic" src="cv-logo.jpg" alt="mycv pic">
-    <div class="project-title">MY CV</div>
-  </a>
-    <a href="https://jsanon01.github.io/fcc-tribute/" target="_blank" class="project project-tile">
-    <img class="project-pic" src="tribute1.jpg" alt="tribute pic">
-    <div class="project-title">MY TRIBUTE PAGE</div>
-  </a>
-    <a href=" https://jsanon01.github.io/aws-tech/" target="_blank" class="project project-tile">
-    <img class="project-pic" src="aws.jpg" alt="aws pic">
-    <div class="project-title">MY TECH SKILLS</div>
-  </a>
-    <a href=" https://jsanon01.github.io/fcc-survey-form/" target="_blank" class="project project-tile">
-    <img class="project-pic" src="survey.png" alt="survey pic">
-    <div class="project-title">MY SURVEY PAGE</div>
-  </a>
-    
-  <a href=" https://jsanon01.github.io/landscaping-company/" target="_blank" class="project project-tile">
-    <img class="project-pic" src="landscape.jpg" alt="landscaping pic">
-    <div class="project-title">LANDSCAPING COMPANY</div>
-  </a>
-  <a href="https://jsanon01.github.io/jkb-2/" target="_blank" class="project project-tile">
-    <img class="project-pic" src="jkbpic.png" alt="jkb pic">
-    <div class="project-title">NGO COMPANY</div>
-  </a>
-  <a href="https://jsanon01.github.io/norwood-church" target="_blank" class="project project-tile">
-    <img class="project-pic" src="logo.png" alt="norwood-church pic">
-    <div class="project-title">NORWOOD CHURCH</div>
-  </a>
-	</div>
-	<!-- <a href="https://jsanon01.github.io/poems/" target="_blank" class="project project-tile">
-    <img class="project-pics" src="tulip.png" alt="tulip pic">
-    <div class="project-title">MY POEMS</div>
-  </a> -->
-</body>
-<footer>*** All the projects given are purposely for demos...***
-  <p>&copy; Created by Web Developer <a href="https://github.com/jsanon01/portfolio" target="_blank">JeanBaptiste Sanon</a></p>
-  <!-- <p>&copy; Created for <a href="https://www.freecodecamp.com/" target="_blank">FreeCodeCamp</a></p> -->
-</footer>
+		<!-- Nav -->
+			<nav id="nav">
+				<ul class="container">
+					<li><a href="#top">Top</a></li>
+					<li><a href="#work">Work</a></li>
+					<li><a href="#portfolio">Portfolio</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+			</nav>
+
+		<!-- Home -->
+			<article id="top" class="wrapper style1">
+				<div class="container">
+					<div class="row">
+						<div class="col-4 col-5-large col-12-medium">
+							<span class="image fit"><img src="images/mypic1.jpg" alt="" /></span>
+						</div>
+						<div class="col-8 col-7-large col-12-medium">
+							<header>
+								<h1>Hi, I'm <strong>Jean Sanon</strong>.</h1>
+							</header>
+							<p>An <strong>AWS Certified Solutions Architect</strong> <br><br>
+								<!-- An <strong>I.T. System Administrator</strong> -->
+								<!-- a free, fully responsive HTML5 site template designed by <a href="http://twitter.com/ajlkn">AJ</a> for <a href="http://html5up.net">HTML5 UP</a> &amp; released under the <a href="http://html5up.net/license">CCA license</a>. --></p>
+							<a href="#work" class="button large scrolly">Learn about what I do</a>
+						</div>
+					</div>
+				</div>
+			</article>
+
+		<!-- Work -->
+			<article id="work" class="wrapper style2">
+				<div class="container">
+					<header>
+						<h2>Some of my Static Websites:</h2>
+						<p>To make it short, everything here is Serverless...</p>
+					</header>
+					<div class="row aln-center">
+						<div class="col-4 col-6-medium col-12-small">
+							<section class="box style1">
+								<span class="image fit"><img src="images/s3.jpg" alt="" /></span>
+								<h3>Static | Dynamic</h3>
+								<p>Designing, Installing, Hosting, & Securing Websites Serverlessly</p>
+								<h3>Call For Quote</h3>
+							</section>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<section class="box style1">
+								<span class="image fit"><img src="images/route_53.jpg" alt="" /></span><br><br><br><br><br>
+								<h3>DNS Management</h3>
+								<p>Either for Certificate Management, or Health Applications Monitoring.</p>
+								<h3>Call For Quote</h3>
+							</section>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<section class="box style1">
+								<span class="image fit"><img src="images/dynamodb.jpg" alt="" /></span><br>
+								<h3>DynamoDB</h3>
+								<p>Designing, and implementing DynamoDB which is Cloud-based.</p>
+								<h3>Call For Quote</h3>
+							</section>
+						</div>
+					</div>
+					<footer>
+						<p>Simply put, with Serverless, You use Less, You pay Less</p>
+						<a href="#portfolio" class="button large scrolly">Recent Work</a>
+					</footer>
+				</div>
+			</article>
+
+		<!-- Portfolio -->
+			<article id="portfolio" class="wrapper style3">
+				<div class="container">
+					<header>
+						<!-- <h2>I use AWS for the following services.See some of my recent work</h2> -->
+						<h2>Serverless in Action</h2>
+						<p>Best Viewed With JSON Extension Enabled In Your Browser</p>
+						<!-- <p>Events triggers API Gateway which invokes AWS Lambda</p> -->
+					</header>
+					<div class="row">
+						<div class="col-4 col-6-medium col-12-small">
+							<article class="box style2">
+								<a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
+								<h3><a href="https://l376kf7gug.execute-api.us-east-1.amazonaws.com/python" target="_blank">Hello Serverless!</a></h3>
+								<p>Python Code Running On Lambda</p>
+							</article>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<article class="box style2">
+								<a href="#" class="image featured"><img src="images/pic06.jpg" alt="" /></a>
+								<h3><a href="https://qkhik5wknd.execute-api.us-east-1.amazonaws.com/serverless-advantages" target="_blank">Serverless Architecture</a></h3>
+								<p>Amazing Advantages</p>
+							</article>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<article class="box style2">
+								<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+								<h3><a href="https://8if9aom0sh.execute-api.us-east-1.amazonaws.com/boston-weather" target="_blank">Weather</a></h3>
+								<p>Current Boston Weather</p>
+							</article>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<article class="box style2">
+								<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+								<h3><a href="https://g10e36o356.execute-api.us-east-1.amazonaws.com/s3-buckets" target="_blank">Storage</a></h3>
+								<p>Fetching S3 Buckets.</p>
+							</article>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<article class="box style2">
+								<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+								<h3><a href="https://fr2hfl4kdk.execute-api.us-east-1.amazonaws.com/dynamodb" target="_blank">Database</a></h3>
+								<p>Fetching DynamoDB Tables</p>
+							</article>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<article class="box style2">
+								<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+								<h3><a href="https://z7eqe5s5ug.execute-api.us-east-1.amazonaws.com/currency" target="_blank">Currency</a></h3>
+								<p>Current Prices: US, BTC, EU, JPY</p>
+							</article>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<article class="box style2">
+								<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+								<h3><a href="https://imbimp4cxd.execute-api.us-east-1.amazonaws.com/nutrition" target="_blank">Nutrition</a></h3>
+								<p>Reload Browser For Random Output</p>
+							</article>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<article class="box style2">
+								<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+								<h3><a href="https://lh4w3l7hbi.execute-api.us-east-1.amazonaws.com/photos" target="_blank">S3 bucket</a></h3>
+								<p>Fetching Random Photos</p>
+							</article>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<article class="box style2">
+								<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+								<h3><a href="https://r5hr1q1k0h.execute-api.us-east-1.amazonaws.com/test/message" target="_blank">Months</a></h3>
+								<p>Reload Browser For Random Output</p>
+						</article>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<article class="box style2">
+								<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+								<h3><a href="https://enp6y3pkk4.execute-api.us-east-1.amazonaws.com/test" target="_blank">U.S. Area Codes</a></h3>
+								<p>Reload Browser For Random Output</p>
+							</article>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<article class="box style2">
+								<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+								<h3><a href="https://9pkby84vq5.execute-api.us-east-1.amazonaws.com/languages" target="_blank">Languages</a></h3>
+								<p>Reload Browser For Random Output</p>
+							</article>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<article class="box style2">
+								<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+								<h3><a href="https://1uki2ejwik.execute-api.us-east-1.amazonaws.com/news" target="_blank">News</a></h3>
+								<p>Fetching Breaking News</p>
+							</article>
+						</div>
+																							
+						<!-- <div class="col-4 col-6-medium col-12-small">
+							<article class="box style2">
+								<a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
+								<h3><a href="https://l376kf7gug.execute-api.us-east-1.amazonaws.com/python" target="_blank">Hello Serverless!</a></h3>
+								<p>Python code running on Lambda</p>
+							</article>
+						</div> -->
+					</div>
+					<footer>
+						<p>Contact Form is not only Dynamic but also Serverless</p>
+						<a href="#contact" class="button large scrolly">Get in touch with me</a>
+					</footer>
+				</div>
+			</article>
+
+		<!-- Contact -->
+			<article id="contact" class="wrapper style4">
+				<div class="container medium">
+					<header>
+						<h2>Have me make work for you.</h2>
+						<!-- <p>Drop Your Contact Information For Follow-Up.</p> -->
+						<p>781-607-9293</p>
+					</header>
+					<div class="row">
+						<div class="col-12">
+							<form method="post" action="https://umbdq84awb.execute-api.us-east-1.amazonaws.com/Testing/feedback">
+								<div class="row">
+									<div class="col-6 col-12-small">
+										<input type="text" name="name" id="name" placeholder="Name" />
+									</div>
+									<div class="col-6 col-12-small">
+										<input type="text" name="email" id="email" placeholder="Email" />
+									</div>
+									<div class="col-12">
+										<input type="text" name="subject" id="subject" placeholder="Subject or Phone" />
+									</div>
+									<div class="col-12">
+										<textarea name="message" id="message" placeholder="Message"></textarea>
+									</div>
+									<div class="col-12">
+										<ul class="actions">
+											<li><input type="submit" value="Send Message" /></li>
+											<li><input type="reset" value="Clear Form" class="alt" /></li>
+										</ul>
+									</div>
+								</div>
+							</form>
+						</div>
+						<div class="col-12">
+							<hr />
+							<h3>Find me on ...</h3>
+							<ul class="social">
+								<li><a href="https://www.facebook.com/karlo.sanon/" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+								<li><a href="https://github.com/jsanon01" class="icon brands fa-github"><span class="label">Github</span></a></li>
+								<li><a href="https://www.linkedin.com/in/jeanbaptiste-sanon-43a038173/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+								<!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+								<li><a href="#" class="icon brands fa-tumblr"><span class="label">Tumblr</span></a></li>
+								<li><a href="#" class="icon brands fa-google-plus"><span class="label">Google+</span></a></li>
+								 -->
+								<!--
+								<li><a href="#" class="icon solid fa-rss"><span>RSS</span></a></li>
+								<li><a href="#" class="icon brands fa-instagram"><span>Instagram</span></a></li>
+								<li><a href="#" class="icon brands fa-foursquare"><span>Foursquare</span></a></li>
+								<li><a href="#" class="icon brands fa-skype"><span>Skype</span></a></li>
+								<li><a href="#" class="icon brands fa-soundcloud"><span>Soundcloud</span></a></li>
+								<li><a href="#" class="icon brands fa-youtube"><span>YouTube</span></a></li>
+								<li><a href="#" class="icon brands fa-blogger"><span>Blogger</span></a></li>
+								<li><a href="#" class="icon brands fa-flickr"><span>Flickr</span></a></li>
+								<li><a href="#" class="icon brands fa-vimeo"><span>Vimeo</span></a></li>
+								-->
+							</ul>
+							<hr />
+						</div>
+					</div>
+					<footer>
+						<ul id="copyright">
+							<li>&copy; Untitled. All rights reserved.</li> <!-- <li>Design: <a href="http://html5up.net">HTML5 UP</a></li> -->
+						</ul>
+					</footer>
+				</div>
+			</article>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
 </html>
